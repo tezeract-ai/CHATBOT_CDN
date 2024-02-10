@@ -68,6 +68,12 @@ const useStyles = makeStyles({
       },
     },
   },
+
+  inputLabel: {
+    color: "#312E49",
+    fontWeight: 500,
+    fontFamily: "Outfit",
+  },
 });
 
 const SignInView = ({
@@ -123,15 +129,7 @@ const SignInView = ({
                 mx: 4,
               }}
             >
-              <InputLabel
-                sx={{
-                  color: "#312E49",
-                  fontWeight: 500,
-                  fontFamily: "Outfit",
-                }}
-              >
-                Email
-              </InputLabel>
+              <InputLabel className={classes.inputLabel}>Email</InputLabel>
               <TextField
                 className={classes.textField}
                 margin="normal"
@@ -173,15 +171,7 @@ const SignInView = ({
                     : ""
                 }
               />
-              <InputLabel
-                sx={{
-                  color: "#312E49",
-                  fontWeight: 500,
-                  fontFamily: "Outfit",
-                }}
-              >
-                Password
-              </InputLabel>
+              <InputLabel className={classes.inputLabel}>Password</InputLabel>
               <TextField
                 className={classes.textField}
                 id="password"
