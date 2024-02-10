@@ -44,6 +44,16 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     console.log("clicked");
     e.preventDefault();
+
+    // Check if both email and password fields are empty
+    if (!email.trim() && !password.trim()) {
+      enqueueSnackbar(`Please fill all the required fields first`, {
+        autoHideDuration: 3000,
+        variant: "warning",
+      });
+      return;
+    }
+
     if (!isEmailDirty || !isPasswordDirty) {
       enqueueSnackbar(`Please enter ${!isEmailDirty ? "Email" : "Password"} `, {
         autoHideDuration: 3000,
