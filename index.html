@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactjs BoilerPlate</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      .html-image-container {
+        width: 250px;
+        background-color: black;
+        border-radius: 5px;
+        margin-left: 20px;
+        /* Adjust the margin to control the space between image and loader */
+      }
+
+      .loader {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #49bbc4;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="image-container">
+        <img
+          src="https://res.cloudinary.com/de8tf7yki/image/upload/v1707546218/vxdgvwzfurjr6dbrarwh.webp"
+          alt="Centered Icon"
+          class="html-image-container"
+        />
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
