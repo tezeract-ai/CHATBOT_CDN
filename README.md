@@ -2,11 +2,14 @@
 
 <p align="center">
     <a href="" rel="noopener">
+        <!-- You can add a link here if you want to link to something specific -->
+    </a>
 </p>
 
-<h3 align="center">React Js Boilerplate</h3>
+<h3 align="center">React JS Boilerplate</h3>
 
-<p align="center"> Made to speed up the setting up and the development process of React JS.
+<p align="center"> 
+    Designed to accelerate the setup and streamline the development process of React JS applications using Vite.
     <br> 
 </p>
 
@@ -14,50 +17,44 @@
 
 - [About](#about)
 - [Installing](#installing)
-- [What's Does it Include?](#usage)
-- [Ackowledgements](#acknowledgement)
+- [What Does it Include?](#usage)
+- [Acknowledgements](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Designed to speed up the setting up and the development process of React Js.
+This boilerplate is crafted to expedite the setup and streamline the development process of React JS applications using Vite.
 
 ### Installing <a name = "installing"></a>
 
-A step by step series of examples that tell you how to get a development environment running.
+Follow these simple steps to set up your development environment:
 
-```
-cd project
-npm i
-```
+1. Navigate to your project directory:
 
-And You're Done!
+2. Install dependencies using npm: npm install
 
-Now Run to Get Started
+That's it! You're all set up and ready to go!
 
-```
-npm run dev
+Now, start the development server by running the following command: npm run dev
 
-```
+## 🎈 What Does it Include? <a name="usage"></a>
 
-## 🎈 What does it include? <a name="usage"></a>
-
-- Made using React 18.2.0
-- Organized WorkFlow.
-- Ready to go Redux Setup!
-- Routing Setup Already Done!
-- Route Gaurding Already Done!
-- Utils have builtin functions for local storage, basic validation.
-- Flow:
-  - Authentication: AuthFlow
-  - Normal User Flow: MainFlow
-- All URLs have been mentioned in a single place just change it there and import it for use in other files ->
-  /utils/constant.js
+- **React 18.2.0**: Utilizes the latest version of React for enhanced performance and features.
+- **Vite**: Utilizes Vite for fast and efficient development and builds.
+- **Organized Workflow**: Provides a structured and organized workflow to facilitate smoother development.
+- **Ready-to-go Redux Setup**: Includes pre-configured Redux setup for efficient state management.
+- **Routing Setup Already Done**: Sets up routing configuration, saving you time and effort.
+- **Route Guarding Already Done**: Implements route guarding to control access to specific routes, ensuring security.
+- **Built-in Utils**: Includes utility functions for common tasks such as local storage management and basic validation.
+- **Flow Management**:
+- **Authentication Flow**: Handles authentication-related workflows.
+- **Normal User Flow**: Manages the typical user interaction flow.
+- **Centralized URL Configuration**: All URLs are consolidated in a single location (`/utils/constants.js`) for easy management and access.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Team MERN - Tezeract
+- **Team MERN - Tezeract**: Credits the MERN team at Tezeract for their contributions and support.
 
-Currently, two official plugins are available:
+Additionally, two official plugins are available for use with Vite:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **[@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)**: Utilizes Babel for Fast Refresh functionality.
+- **[@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc)**: Utilizes SWC for Fast Refresh functionality.
