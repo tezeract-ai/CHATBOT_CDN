@@ -58,3 +58,4 @@ Additionally, two official plugins are available for use with Vite:
 
 - **[@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)**: Utilizes Babel for Fast Refresh functionality.
 - **[@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc)**: Utilizes SWC for Fast Refresh functionality.
+# CHATBOT_BOILERPLATE
