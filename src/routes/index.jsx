@@ -1,15 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoutes from "./ProtectedRoutes";
-import UnProtectedRoutes from "./UnProtectedRoutes";
-import SignIn from "../pages/AuthFlow/SignIn";
+import ChatBot from "../pages/MainFlow/ChatBot";
 
 const RoutesIndex = () => {
   return (
     <Routes>
       {
         <>
-          <Route path="/" element={<UnProtectedRoutes Component={SignIn} />} />
+          <Route path="/" element={<ChatBot />} />
         </>
       }
     </Routes>
