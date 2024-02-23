@@ -78,6 +78,8 @@ const ChatBotView = ({
             flexDirection: "column",
             justifyContent: "flex-end",
             borderRadius: 5,
+            zIndex: 9999,
+            backgroundColor: "white",
           }}
         >
           <Box sx={{ position: "relative", width: "100%", zIndex: 1000 }}>
@@ -261,8 +263,6 @@ const ChatBotView = ({
             sx={{
               mx: 2,
               my: 2,
-              zIndex: 9999,
-              backgroundColor: "white",
             }}
           >
             <form onSubmit={(e) => sendMessage(e)}>
