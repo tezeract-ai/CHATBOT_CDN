@@ -5,6 +5,9 @@ import { enqueueSnackbar } from "notistack";
 import axios from "axios";
 
 const ChatBot = () => {
+  const scriptTag = document.querySelector("script[data-agent-id]");
+  const chatbotId = scriptTag ? scriptTag.dataset.agentId : null;
+
   let lastItemRef = useRef(null);
   let boxRef = useRef(null);
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -13,17 +16,8 @@ const ChatBot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [openChat, setOpenChat] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [chatMessages, setChatMessages] = useState([
-    // {
-    //   role: "user",
-    //   content: "Hello",
-    // },
-    // {
-    //   role: "assistant",
-    //   content: `
-    //   <!DOCTYPE html><html> <head>  <title>   How to Start a Music Career  </title> </head> <body>  <h1>   How to Start a Music Career  </h1>  <p>   To start your music career, you need to:  </p>  <ol>   <li>    Define your goals. What do you want to achieve as a musician? Do you want to be a solo artist, join a band, or become a songwriter or producer? Once you know what you want, you can start to develop a plan to achieve it.    <a href=\"https://soundcamps.com/blog/how-to-start-a-music-career/\" target=\"_blank\">     <img alt=\"Music career goals\" src=\"https://blog.discmakers.com/wp-content/uploads/2015/01/Smart-Goals-Social.jpg\"/>    </a>   </li>   <li>    Develop your skills. This includes practicing your instrument or singing voice, learning music theory, and songwriting. You may also want to take lessons from a qualified instructor.    <a href=\"https://d4musicmarketing.com/start-music-career/\" target=\"_blank\">     <img alt=\"Music career skills\" src=\"https://tomhess.net/files/images/Infographic/FiveWaysToBuildYourMusicCareerFaster.jpg\"/>    </a>   </li>   <li>    Build a portfolio. This could include demo recordings, live performances, or music videos. Your portfolio will showcase your talents to potential collaborators, fans, and industry professionals.    <a href=\"https://www.amuse.io/en/categories/how-to/start-music-career/how-to-get-started-with-your-music-career/\" target=\"_blank\">     <img alt=\"Music career portfolio\" src=\"https://images.squarespace-cdn.com/content/v1/5fa01a949598905a5ef1c7bd/1690897461583-R7F0X8789GQIO8ZFUVDI/What+Does+a+Portfolio+Career+in+Music+Look+Like.jpg\"/>    </a>   </li>   <li>    Network with other musicians. Get involved in the local music scene and meet other musicians who share your interests. You can collaborate on projects, perform together, and support each other's careers.    <a href=\"https://www.connollymusic.com/stringovation/starting-a-music-career\" target=\"_blank\">     <img alt=\"Music career networking\" src=\"https://www.careersinmusic.com/wp-content/uploads/2019/01/music-employment.jpg\"/>    </a>   </li>   <li>    Promote your music. Use social media, streaming platforms, and other online tools to reach a wider audience. You can also play live shows and distribute physical copies of your music.    <a href=\"https://www.indeed.com/career-advice/finding-a-job/music-careers\" target=\"_blank\">     <img alt=\"Music career promotion\" src=\"https://blog.reverbnation.com/wp-content/uploads/2022/07/1500x1000-balance-creative-promotion.jpg\"/>    </a>   </li>  </ol>  <p>   Here are some additional tips for starting your music career:  </p>  <ul>   <li>    Be patient and persistent.   </li>   <li>    Be original and authentic.   </li>   <li>    Be open to feedback and collaboration.   </li>   <li>    Have fun!   </li>  </ul>  <p>   Starting a music career can be challenging, but it's also incredibly rewarding. If you're passionate about music and willing to put in the work, you can achieve your goals.  </p> </body></html>`,
-    // },
-  ]);
+  const [chatMessages, setChatMessages] = useState([]);
+  const [threadId, setThreadId] = useState("");
   const [copied, setCopied] = useState(false);
   const [selectedChatResponse, setselectedChatResponse] = useState();
 
@@ -145,7 +139,7 @@ const ChatBot = () => {
         const messageObject = {
           role: "user",
           content: inputValue,
-          thread_id: "",
+          thread_id: threadId ? threadId : "",
         };
 
         setChatMessages((prevResults) => [...prevResults, messageObject]);
@@ -153,10 +147,10 @@ const ChatBot = () => {
 
         const res = await axios({
           method: "post",
-          url: import.meta.env.VITE_BACKEND_URL,
+          url: "http://3.80.181.231:8010/chat",
           data: messageObject,
           headers: {
-            Authorization: import.meta.env.VITE_AUTHORIZATION,
+            Authorization: chatbotId,
           },
         })
           .then(function (response) {
@@ -166,11 +160,12 @@ const ChatBot = () => {
                 role: "assistant",
                 content: response?.data?.content,
               };
+              setThreadId(response?.data?.thread_id);
               setChatMessages((prevResults) => [...prevResults, obj]);
               setIsLoading(false);
             } else {
               setIsLoading(false);
-              enqueueSnackbar(`${response?.data?.message}`, {
+              enqueueSnackbar(`Error`, {
                 autoHideDuration: 3000,
                 variant: "error",
               });
