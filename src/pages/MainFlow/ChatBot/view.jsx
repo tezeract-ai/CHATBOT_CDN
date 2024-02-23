@@ -8,19 +8,8 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import animationData from "../../../assets/Typing.json";
 import Lottie from "react-lottie";
-import ChatTop from "../../../assets/images/chat-top2.png";
-import ChatBackground from "../../../assets/images/bot-chat-background.png";
-import USERIMG from "../../../assets/images/user.png";
-import GPTIMG from "../../../assets/images/chat.png";
 
-import {
-  IconButton,
-  Typography,
-  Avatar,
-  Tooltip,
-  TextField,
-  Box,
-} from "@mui/material";
+import { IconButton, Typography, Avatar, TextField, Box } from "@mui/material";
 
 const defaultOptions = {
   loop: true,
@@ -208,29 +197,6 @@ const ChatBotView = ({
                                   )}
                                 />
                               </Box>
-                              {/* <CopyToClipboard
-                                onCopy={() => {
-                                  handleCopy(index);
-                                }}
-                                text={msg?.content}
-                              >
-                                <Box sx={{ cursor: "pointer" }}>
-                                  <Tooltip
-                                    title={
-                                      index === selectedChatResponse
-                                        ? "Copied"
-                                        : "Copy"
-                                    }
-                                  >
-                                    <ContentCopyIcon
-                                      fontSize="small"
-                                      sx={{
-                                        color: "#3a3356",
-                                      }}
-                                    />
-                                  </Tooltip>
-                                </Box>
-                              </CopyToClipboard> */}
                             </Box>
                           ) : (
                             <Typography
@@ -295,6 +261,8 @@ const ChatBotView = ({
             sx={{
               mx: 2,
               my: 2,
+              zIndex: 9999,
+              backgroundColor: "white",
             }}
           >
             <form onSubmit={(e) => sendMessage(e)}>
