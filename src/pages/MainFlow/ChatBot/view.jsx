@@ -92,7 +92,12 @@ const ChatBotView = ({
           }}
         >
           <Box sx={{ position: "relative", width: "100%", zIndex: 1000 }}>
-            <img src={ChatTop} alt="chat-top" height="70%" width="100%" />
+            <img
+              src="https://res.cloudinary.com/de8tf7yki/image/upload/v1708693818/vrgzp9opcadmxdrvj0gp.png"
+              alt="chat-top"
+              height="70%"
+              width="100%"
+            />
             <Box
               sx={{
                 position: "absolute",
@@ -132,7 +137,7 @@ const ChatBotView = ({
               padding: 2,
               position: "relative",
               backgroundColor: "white",
-              backgroundImage: `url(${ChatBackground})`,
+              backgroundImage: `url(https://res.cloudinary.com/de8tf7yki/image/upload/v1708693803/laovlinusvkp69yw6sb9.png)`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               borderBottomLeftRadius: 15,
@@ -251,7 +256,11 @@ const ChatBotView = ({
                           }}
                         >
                           <Avatar
-                            src={msg?.role === "user" ? USERIMG : GPTIMG}
+                            src={
+                              msg?.role === "user"
+                                ? "https://res.cloudinary.com/de8tf7yki/image/upload/v1708693783/lmtt8spvrqd4soly7ls8.png"
+                                : "https://res.cloudinary.com/de8tf7yki/image/upload/v1708693782/yaq1gv1lvq2l4gbwxrni.png"
+                            }
                             style={{
                               width: 26,
                               height: 26,
