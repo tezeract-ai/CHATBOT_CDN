@@ -147,7 +147,7 @@ const ChatBot = () => {
 
         const res = await axios({
           method: "post",
-          url: "http://3.80.181.231:8010/chat",
+          url: "https://fluenttalkai.com/chat/chat",
           data: messageObject,
           headers: {
             Authorization: chatbotId,
